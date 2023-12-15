@@ -24,9 +24,9 @@ export default function CogenerationUnitCalculation() {
     const onSubmitForm = (e) => {
         e.preventDefault()
 
-        const N = fuelConsumption * fuelType.Q * cogenerationUnitEfficiencyElectrical / 100 / 3600
-        const Q = fuelConsumption * fuelType.Q * cogenerationUnitEfficiencyHeat / 100 / 3600
-        const T = coolantTemperature + 3600 * Q / (4.187 * coolantConsumption)
+        const N = fuelConsumption * fuelType.Q * cogenerationUnitEfficiencyElectrical / 100
+        const Q = fuelConsumption * fuelType.Q * cogenerationUnitEfficiencyHeat / 100
+        const T = coolantTemperature + 100 * Q / (4.187 * coolantConsumption)
 
         setPowerElectricalCalculation(N.toFixed(6))
         setPowerHeatCalculation(Q.toFixed(6))

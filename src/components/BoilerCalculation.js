@@ -22,8 +22,8 @@ export default function BoilerCalculation() {
     const onSubmitForm = (e) => {
         e.preventDefault()
 
-        const Q = fuelConsumption * fuelType.Q * boilerEfficiency / 100 / 3600
-        const T = coolantTemperature + 3600 * Q / (4.187 * coolantConsumption)
+        const Q = fuelConsumption * fuelType.Q * boilerEfficiency / 100
+        const T = coolantTemperature + 100 * Q / (4.187 * coolantConsumption)
 
         setPowerCalculation(Q.toFixed(6))
         setTemperatureCalculation((+T).toFixed(2))
