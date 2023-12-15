@@ -22,7 +22,7 @@ export default function RegenerativeHeatExchanger() {
         e.preventDefault()
 
         const airExchange = airExchangePerPerson * peopleCount
-        const Qair = (insideTemperature - temperatureOutsideNow) * airExchange / 3600
+        const Qair = (insideTemperature - temperatureOutsideNow) * airExchange / 100
         const Qrhe = Qair * regenerativeHeatExchangerEfficiency / 100
         const Qdecr = Qair - Qrhe
 
